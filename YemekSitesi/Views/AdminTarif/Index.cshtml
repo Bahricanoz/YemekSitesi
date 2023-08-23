@@ -1,0 +1,33 @@
+﻿@using YemekSitesi.Models.Entity
+@model List<Tbl_Tarifler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="margin:20px 0px;">
+    <h2>Tarif İşlemleri Sayfası</h2>
+</div>
+<table class="table table-bordered" id="tbltarif">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Yemek Adı</th>
+            <th>Sil</th>
+            <th>Detay</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var x in Model)
+            {
+                <tr>
+                    <td>@x.Id</td>
+                    <td>@x.Name</td>
+                    <td>@x.Yemekad</td>
+                    <td><a class="btn btn-danger" href="/AdminTarif/Sil/@x.Id">Tarif Sil</a></td>
+                    <td><a href="/AdminTarif/Detay/@x.Id" class="btn btn-success">Tarif Detay</a></td>
+                </tr>
+            }
+    </tbody>
+</table>

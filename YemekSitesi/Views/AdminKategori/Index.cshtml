@@ -1,0 +1,47 @@
+﻿@using YemekSitesi.Models.Entity
+@model List<Tbl_Kategori>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div style="margin:20px 0px;">
+    <h2>Kategori İşlemleri</h2>
+    <a href="/AdminKategori/Ekle/" class="btn btn-info">Kategori Ekle</a>
+</div>
+<table class="table table-bordered" id="tblkat">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Kategori Ad</th>
+            <th>Durum</th>
+            <th>İşlemler</th>
+            <th>Güncelle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ string durum = "";}
+        @foreach (var x in Model)
+        {
+            if (x.Durum == true)
+            {
+                durum = "Aktif";
+            }
+            if (x.Durum == false)
+            {
+                durum = "Pasif";
+            }
+            <tr>
+                <td>@x.Id</td>
+                <td>@x.KategoriAd</td>
+                <td>@durum</td>
+                <td><a href="/AdminKategori/Aktifyap/@x.Id" class="btn btn-outline-success">Aktif Yap</a> <a href="/AdminKategori/Pasifyap/@x.Id" class="btn btn-outline-danger">Pasif Yap</a></td>
+                <td><a href="/AdminKategori/Guncelle/@x.Id" class="btn btn-warning">Kategori Güncelle</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<link href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" rel="stylesheet" />
+<script>
+    $('#tblkat').dataTable();
+</script>

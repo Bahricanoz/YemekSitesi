@@ -1,0 +1,13 @@
+﻿@using YemekSitesi.Models.Entity
+@model List<Tbl_Kategori>
+
+<div class="categories">
+    <h3>Kategoriler</h3>
+    <ul>
+        @foreach (var x in Model)
+        {
+            <li><a href="#">@x.KategoriAd</a></li>
+        }
+
+    </ul>
+</div>

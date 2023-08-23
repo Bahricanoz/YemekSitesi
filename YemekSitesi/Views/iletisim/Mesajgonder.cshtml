@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Mesajgonder";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<div class="contact-content">
+    <div class="container">
+        <div class="contact-info">
+            <h2>Bize Ulaşın...</h2>
+            <p>Lezzet yolculuğumuzda sizinle daha fazla anı paylaşmak istiyoruz. Tarif önerileriniz, deneyimleriniz veya herhangi bir sorunuz için bize ulaşmaktan çekinmeyin. Yemek tutkumuzu birlikte büyütelim ve damak zevkini bir adım öteye taşıyalım.</p>
+            <p>Her mesajınız, yeni bir tat ve deneyim demektir. Sizi dinlemek ve sizinle daha yakından tanışmak için sabırsızlanıyoruz!</p>
+        </div>
+        <div class="contact-details">
+            <form method="post">
+                <input type="text" placeholder="İsim" name="Name"  required />
+                <input type="text" placeholder="Mail Adresi" name="Mail" required inputmode="email" />
+                <input type="text" placeholder="Telefon" name="Telefon" required  inputmode="tel"/>
+                <input type="text" placeholder="Konu" name="Konu" required />
+                <textarea placeholder="Message" name="Mesaj"></textarea>
+                <button class="btn btn-info">Mesaj Gönder</button>
+            </form>
+        </div>
+        <div class="contact-details">
+            <div class="col-md-6 contact-map">
+                <h4>Biz Buradyız</h4>
+                <div style="overflow:hidden;resize:none;max-width:100%;width:500px;height:300px;"><div id="my-map-display" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=İstanbul,+Türkiye&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><a class="embedded-map-code" rel="nofollow" href="https://www.bootstrapskins.com/themes" id="enable-map-data">premium bootstrap themes</a>
+                <style>
+                    #my-map-display .text-marker {
+                    }
+
+                    .map-generator {
+                        max-width: 100%;
+                        max-height: 100%;
+                        background: none;
+                </style></div>
+            </div>
+            <div class="col-md-6 company_address">
+                <h4>Bizemle İletişime Geçin</h4>
+                <p>500 Lorem Ipsum Dolor Sit,</p>
+                <p>22-56-2-9 Sit Amet, Lorem,</p>
+                <p>USA</p>
+                <p>Phone:(00) 222 666 444</p>
+                <p>Fax: (000) 123 456 78 0</p>
+                <p>Email: <a href="mailto:info@example.com">info@mycompany.com</a></p>
+                <p>Follow on: <a href="#">Facebook</a>, <a href="#">Twitter</a></p>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+
+    </div>
+</div>
+
+

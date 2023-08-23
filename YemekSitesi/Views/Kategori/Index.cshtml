@@ -1,0 +1,38 @@
+﻿@using YemekSitesi.Models.Entity
+@model List<Tbl_Yemek>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+    <div class="content-grids">
+        <div class="col-md-8 content-main">
+            <div class="content-grid">
+                @foreach (var x in Model)
+                {
+                    <div class="content-grid-info">
+                        <img src="@x.Resim" alt="" style="height:325px; width:650px;" />
+                        <div class="post-info">
+                            <h4><a href="#">@x.Yemekad</a>  @x.Tarih</h4>
+                            <p>@x.icerik.Substring(0,40)</p>
+                            <a href="#"><span></span>Devamını Oku</a>
+                        </div>
+                    </div>
+                 }
+
+
+
+            </div>
+        </div>
+        <div class="col-md-4 content-right">
+           @Html.Action("SonYemekler")
+           @Html.Action("Sonyorumlar")
+            <div class="clearfix"></div>
+           @Html.Action("Kategoriler")
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+

@@ -1,0 +1,45 @@
+﻿@using YemekSitesi.Models.Entity
+@model List<Tbl_Admin>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="margin:20px 0px;">
+    <h2>Admin İşlemleri Sayfası</h2>
+    <a href="/Admin/Ekle/" class="btn btn-info">Admin Ekle</a>
+</div>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>İsim</th>
+            <th>Durum</th>
+            <th>İşlemler</th>
+            <th>Güncelle</th>
+            <th>Detay</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ string durum = "";}
+        @foreach (var x in Model)
+        {
+            if(x.Durum == true)
+            {
+                durum = "Aktif";
+            }
+            if(x.Durum== false)
+            {
+                durum = "Pasif";
+            }
+            <tr>
+                <td>@x.Id</td>
+                <td>@x.Ad @x.Soyad </td>
+                <td>@durum</td>
+                <td><a href="/Admin/Aktifyap/@x.Id" class="btn btn-outline-primary">Akif Yap</a> <a href="/Admin/Pasifyap/@x.Id" class="btn btn-outline-secondary">Pasif Yap</a> <a class="btn btn-outline-danger" href="/Admin/Sil/@x.Id">Sil</a></td>
+                <td><a href="/Admin/Guncelle/@x.Id" class="btn btn-warning">Admin Güncelle</a></td>
+                <td><a href="/Admin/Detay/@x.Id" class="btn btn-success">Admin Detay</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

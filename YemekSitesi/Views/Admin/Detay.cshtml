@@ -1,0 +1,39 @@
+﻿@model YemekSitesi.Models.Entity.Tbl_Admin
+@{
+    ViewBag.Title = "Detay";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="margin-top:20px;">
+    <h2>Admin Detay Sayfası</h2>
+</div>
+<form class="form-group">
+    <div style="margin-top:20px;">
+        <label>Admin Id:</label>
+        @Html.TextBoxFor(x => x.Id, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+    <div style="margin-top:20px;">
+        <label>Ad</label>
+        @Html.TextBoxFor(x => x.Ad, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+    <div style="margin-top:20px;">
+        <label>Soyad:</label>
+        @Html.TextBoxFor(x => x.Soyad, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+    <div style="margin-top:20px;">
+        <label>Mail:</label>
+        @Html.TextBoxFor(x => x.Mail, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+    <div style="margin-top:20px;">
+        <label>Durum:</label>
+        @Html.TextBoxFor(x => x.Durum, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+    <div style="margin-top:20px;">
+        <label>Kullanıcı Adı:</label>
+        @Html.TextBoxFor(x => x.kullaniciadi, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+    <div style="margin-top:20px;">
+        <label>Şifre:</label>
+        @Html.TextBoxFor(x => x.sifre, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+</form>

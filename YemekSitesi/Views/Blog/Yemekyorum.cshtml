@@ -1,0 +1,14 @@
+﻿@using YemekSitesi.Models.Entity
+@model List<Tbl_Yorum>
+@foreach(var x in Model) {
+        <ul class="comment-list">
+            
+            <li>
+                <img src="~/web/images/avatar.png" class="img-responsive" alt="">
+                <div class="desc">
+                    <p>@x.Name :@x.İcerik</p>
+                </div>
+                <div class="clearfix"></div>
+            </li>
+        </ul>
+}

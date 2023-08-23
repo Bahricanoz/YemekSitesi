@@ -1,0 +1,13 @@
+﻿@using YemekSitesi.Models.Entity
+@model List<Tbl_Yemek>
+
+<div class="recent">
+    <h3>Son Yemekler</h3>
+    <ul>
+        @foreach(var x in Model) 
+        {
+            <li><a href="#">@x.Yemekad</a></li>
+        }
+        
+    </ul>
+</div>

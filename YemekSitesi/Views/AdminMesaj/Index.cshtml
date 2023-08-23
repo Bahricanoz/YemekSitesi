@@ -1,0 +1,33 @@
+﻿@using YemekSitesi.Models.Entity
+@model List<Tbl_Mesaj>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="margin-top:20px;">
+    <h2>Mesaj Sayfası</h2>
+</div>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Mail</th>
+            <th>Sil</th>
+            <th>Detay</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var x in Model)
+            {
+                <tr>
+                    <td>@x.Id</td>
+                    <td>@x.Name</td>
+                    <td>@x.Mail</td>
+                    <td><a href="/AdminMesaj/Sil/@x.Id" class="btn btn-danger">Mesaj Sil</a></td>
+                    <td><a href="/AdminMesaj/Detay/@x.Id" class="btn btn-success">Mesaj Detay</a></td>
+                </tr>
+            }
+    </tbody>
+</table>

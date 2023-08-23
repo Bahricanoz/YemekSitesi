@@ -1,0 +1,40 @@
+﻿@model YemekSitesi.Models.Entity.Tbl_Yemek
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="margin-top:20px;">
+    <h2>Yemek Ekleme Sayfası</h2>
+</div>
+<form class="form-group" method="post">
+    <div style="margin-top:20px;">
+        <label>Yemek Adı:</label>
+        <input type="text" class="form-control" required name="Yemekad" />
+    </div>
+    <div style="margin-top:20px;">
+        <label>Resim</label>
+        <input type="text" class="form-control" required name="resim" />
+    </div>
+    <div style="margin-top:20px;">
+        <label>Kategori:</label>
+        @*<input type="text" class="form-control" required name="Tarih" />*@
+        @Html.DropDownListFor(x=>x.Tbl_Kategori.Id, (List<SelectListItem>)ViewBag.kat, new { @class="form-control", @required="required"})
+    </div>
+    <div style="margin-top:20px;">
+        <label>Tarih:</label>
+        <input type="text" class="form-control" required name="Tarih" />
+    </div>
+    <div style="margin-top:20px;">
+        <label>Malzemeler:</label>
+        <textarea type="text" class="form-control" required name="Malzemeler" style="height:150px;" ></textarea>
+    </div>
+    <div style="margin-top:20px;">
+        <label>İçerik:</label>
+        <textarea type="text" class="form-control" required name="icerik" style="height:150px;"></textarea>
+    </div>
+    <div style="margin-top:20px;">
+        <button class="btn btn-primary">Yemek Ekle</button>
+    </div>
+</form>
+

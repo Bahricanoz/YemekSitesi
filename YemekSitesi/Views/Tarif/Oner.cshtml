@@ -1,0 +1,67 @@
+﻿@model YemekSitesi.Models.Entity.Tbl_Tarifler
+@{
+    ViewBag.Title = "Oner";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div class="contact-content">
+    <div class="container">
+        <div class="contact-info">
+            <h2>Lezzetlere Yolculuk: Tarif Önerme Sayfası</h2>
+            <p>Hoş geldiniz! En sevdiğiniz yemekleri keşfetmek ve yeni tatlar denemek için buradayız. Binlerce tarif arasından istediğinizi seçebilir, hızlıca pişirme önerilerine göz atabilirsiniz. Haydi, mutfağınıza renk katın ve lezzetli bir yolculuğa çıkın!</p>
+        </div>
+        <div class="contact-details">
+            @using (Html.BeginForm("Oner", "Tarif", FormMethod.Post))
+            {
+                @*<input type="text" placeholder="Name" required />*@
+                @Html.TextBoxFor(x => x.Name, new { required = "required", placeholder = "İsim..." })
+                @*<input type="text" placeholder="Email" required />*@
+                @Html.TextBoxFor(x => x.Mail, new { required = "required", placeholder = "Mail..." })
+                @*<input type="text" placeholder="Phone" required />*@
+                @Html.TextBoxFor(x => x.Yemekad, new { required = "required", placeholder = "Yemek Adı..." })
+                @Html.TextBoxFor(x => x.Resim, new { required = "required", placeholder = "Resim..." })
+                @Html.DropDownListFor(m => m.Tbl_Kategori.KategoriAd, (List<SelectListItem>)ViewBag.kat, new { required = "required",@class="form-control",@style="margin-bottom:20px; width:530px;" })
+                @Html.TextAreaFor(x => x.Tarif, new { required = "required", placeholder = "Tarif..." })
+                <button class="btn btn-info">Tarif Gönder</button>
+            }
+        </div>
+        <div class="contact-details">
+            <div class="col-md-6 contact-map">
+                <h4>Biz Buradyız</h4>
+                <div style="overflow:hidden;resize:none;max-width:100%;width:500px;height:300px;">
+                    <div id="my-map-display" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=İstanbul,+Türkiye&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><a class="embedded-map-code" rel="nofollow" href="https://www.bootstrapskins.com/themes" id="enable-map-data">premium bootstrap themes</a>
+                    <style>
+                        #my-map-display .text-marker {
+                        }
+
+                        .map-generator {
+                            max-width: 100%;
+                            max-height: 100%;
+                            background: none;
+                    </style>
+                </div>
+            </div>
+            <div class="col-md-6 company_address">
+                <h4>Bizemle İletişime Geçin</h4>
+                <p>500 Lorem Ipsum Dolor Sit,</p>
+                <p>22-56-2-9 Sit Amet, Lorem,</p>
+                <p>USA</p>
+                <p>Phone:(00) 222 666 444</p>
+                <p>Fax: (000) 123 456 78 0</p>
+                <p>Email: <a href="mailto:info@example.com">info@mycompany.com</a></p>
+                <p>Follow on: <a href="#">Facebook</a>, <a href="#">Twitter</a></p>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+
+    </div>
+</div>
+
+<!---->
+<div class="footer">
+    <div class="container">
+        <p>Copyrights © 2015 Blog All rights reserved | Template by <a href="http://w3layouts.com/">W3layouts</a></p>
+    </div>
+</div>
+

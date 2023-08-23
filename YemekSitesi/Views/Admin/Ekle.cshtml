@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="margin-top:20px;">
+    <h2>Admin Ekleme Sayfası</h2>
+</div>
+<form method="post" class="form-group">
+    <div style="margin-top:20px;">
+        <label>Ad:</label>
+        <input type="text" name="Ad" class="form-control" required />
+    </div>
+    <div style="margin-top:20px;">
+        <label>Soyad:</label>
+        <input type="text" name="Soyad" class="form-control" required />
+    </div>
+    <div style="margin-top:20px;">
+        <label>Mail:</label>
+        <input type="text" name="Mail" class="form-control" required />
+    </div>
+    <div style="margin-top:20px;">
+        <label>Kullancı Adı:</label>
+        <input type="text" name="kullaniciadi" class="form-control" required />
+    </div>
+    <div style="margin-top:20px;">
+        <label>Şifre:</label>
+        <input type="text" name="sifre" class="form-control" required />
+    </div>
+    <div style="margin-top:20px;">
+        <button class="btn btn-primary">Admin Kayıt</button>
+    </div>
+</form>

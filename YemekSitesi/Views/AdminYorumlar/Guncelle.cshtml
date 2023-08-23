@@ -1,0 +1,34 @@
+﻿@model YemekSitesi.Models.Entity.Tbl_Yorum
+@{
+    ViewBag.Title = "Guncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div style="margin-top:20px;">
+    <h2>Yorum Güncelleme Sayfası</h2>
+</div>
+@using (Html.BeginForm("Guncelle", "AdminYorumlar", FormMethod.Post))
+{
+    <div style="margin-top:20px;">
+        <label>Yorum Id:</label>
+        @Html.TextBoxFor(x => x.Id, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+    <div style="margin-top:20px;">
+        <label>İsim:</label>
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+    <div style="margin-top:20px;">
+        <label>Mail:</label>
+        @Html.TextBoxFor(x => x.Mail, new { @class = "form-control", @required = "required" })
+    </div>
+    <div style="margin-top:20px;">
+        <label>Yemek Adı:</label>
+        @Html.TextBoxFor(x => x.Tbl_Yemek.Yemekad, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+    <div style="margin-top:20px;">
+        <label>İçerik</label>
+        @Html.TextAreaFor(x => x.İcerik, new { @class = "form-control", @required = "required" })
+    </div>
+    <div style="margin-top:20px;">
+        <button class="btn btn-warning">Yorum Güncelle</button>
+    </div>
+}

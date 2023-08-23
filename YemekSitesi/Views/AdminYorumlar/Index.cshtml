@@ -1,0 +1,53 @@
+﻿@using YemekSitesi.Models.Entity
+@model List<Tbl_Yorum>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="margin:20px 0px;">
+    <h2>Yorum İşlemleri</h2>
+</div>
+<table class="table table-bordered" id="tblyorum">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>İsim</th>
+            <th>Mail</th>
+            <th>Yemek Ad</th>
+            <th>Durum</th>
+            <th>İşlemler</th>
+            <th>Güncelle</th>
+            <th>Detay</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ string durum = "";}
+        @foreach (var x in Model)
+        {
+            if (x.Durum == true)
+            {
+                durum = "Aktif";
+            }
+            if (x.Durum == false)
+            {
+                durum = "Pasif";
+            }
+            <tr>
+                <td>@x.Id</td>
+                <td>@x.Name</td>
+                <td>@x.Mail</td>
+                <td>@x.Tbl_Yemek.Yemekad</td>
+                <td>@durum</td>
+                <td><a href="/AdminYorumlar/Aktifyap/@x.Id" class="btn btn-outline-success">Aktif Yap</a> <a href="/AdminYorumlar/Pasifyap/@x.Id" class="btn btn-outline-danger">Pasif Yap</a></td>
+                <td><a href="/AdminYorumlar/Guncelle/@x.Id" class="btn btn-warning">Yorum Güncelle</a></td>
+                <td><a href="/Adminyorumlar/Detay/@x.Id" class="btn btn-success">Yorum Detay</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<link href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" rel="stylesheet" />
+<script>
+    $('#tblyorum').dataTable();
+</script>

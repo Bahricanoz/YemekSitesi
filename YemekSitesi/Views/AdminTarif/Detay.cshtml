@@ -1,0 +1,38 @@
+﻿@model YemekSitesi.Models.Entity.Tbl_Tarifler
+@{
+    ViewBag.Title = "Detay";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div style="margin:20px;">
+    <h2>Tarif Detay Sayfası</h2>
+</div>
+<form class="form-group">
+    <div style="margin-top:20px;">
+        <label>Id</label>
+        @Html.TextBoxFor(x => x.Id, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+    <div style="margin-top:20px;">
+        <label>İsim</label>
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+    <div style="margin-top:20px;">
+        <label>Mail:</label>
+        @Html.TextBoxFor(x => x.Mail, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+    <div style="margin-top:20px;">
+        <label>Yemek Ad:</label>
+        @Html.TextBoxFor(x => x.Yemekad, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+    <div style="margin-top:20px;">
+        <label>Kategori Ad:</label>
+        @Html.TextBoxFor(x => x.Tbl_Kategori.KategoriAd, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+    <div style="margin-top:20px;">
+        <label>Resim</label>
+        @Html.TextBoxFor(x => x.Resim, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+    <div style="margin-top:20px;">
+        <label>Tarif</label>
+        @Html.TextAreaFor(x => x.Tarif, new { @class = "form-control", @readonly = "readonly",@style="height:200px;" })
+    </div>
+</form>

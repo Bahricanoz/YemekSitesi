@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="25768e232aef4d12abb03e38408adfae" Name="Diagram1">
+        <EntityTypeShape EntityType="Db_YemekSitesiModel.Tbl_Admin" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Db_YemekSitesiModel.Tbl_Hakkımızda" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Db_YemekSitesiModel.Tbl_Kategori" Width="1.5" PointX="0.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Db_YemekSitesiModel.Tbl_Mesaj" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Db_YemekSitesiModel.Tbl_Tarifler" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Db_YemekSitesiModel.Tbl_Yemek" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Db_YemekSitesiModel.Tbl_Yorum" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="Db_YemekSitesiModel.FK_Tbl_Tarifler_Tbl_Kategori" ManuallyRouted="false" />
+        <AssociationConnector Association="Db_YemekSitesiModel.FK_Tbl_Yemek_Tbl_Kategori" ManuallyRouted="false" />
+        <AssociationConnector Association="Db_YemekSitesiModel.FK_Tbl_Yorum_Tbl_Yemek" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

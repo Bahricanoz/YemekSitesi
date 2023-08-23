@@ -1,0 +1,38 @@
+﻿@model YemekSitesi.Models.Entity.Tbl_Hakkımızda
+@{
+    ViewBag.Title = "Guncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div style="margin-top:20px;">
+    <h2>Hakkzmızda Güncelleme Sayfası</h2>
+</div>
+@using (Html.BeginForm("Guncelle", "AdminHakkımızda", FormMethod.Post))
+{
+    <div style="margin-top:20px;">
+        <label>Başlık</label>
+        @Html.TextBoxFor(x => x.Baslık, new { @class = "form-control", @required = "required" })
+    </div>
+    <div style="margin-top:20px;">
+        <label>Başlık</label>
+        @Html.TextBoxFor(x => x.Resim, new { @class = "form-control", @required = "required" })
+    </div>
+    <div style="margin-top:20px;">
+        <label>İçerik 1</label>
+        @Html.TextAreaFor(x => x.icerik1, new { @class = "form-control", @required = "required", @style = "height:150px;" })
+    </div>
+    <div style="margin-top:20px;">
+        <label>İçerik 2</label>
+        @Html.TextAreaFor(x => x.icerik2, new { @class = "form-control", @required = "required", @style = "height:150px;" })
+    </div>
+    <div style="margin-top:20px;">
+        <label>İçerik 3</label>
+        @Html.TextAreaFor(x => x.icerik3, new { @class = "form-control", @required = "required", @style = "height:150px;" })
+    </div>
+    <div style="margin-top:20px;">
+        <label>İçerik 4</label>
+        @Html.TextAreaFor(x => x.icerik4, new { @class = "form-control", @required = "required", @style = "height:150px;" })
+    </div>
+    <div style="margin-top:20px;">
+        <button class="btn btn-success">Hakkımda Güncelleme</button>
+    </div>
+}
